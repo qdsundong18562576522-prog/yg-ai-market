@@ -61,6 +61,7 @@ class ChatSession(Base):
     user_id = Column(Integer, ForeignKey("user.id", ondelete="CASCADE"), nullable=False)
     app_id = Column(Integer, ForeignKey("app.id", ondelete="CASCADE"), nullable=False)
     title = Column(String(200), default="新对话")
+    external_session_id = Column(String(100), default="")
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
